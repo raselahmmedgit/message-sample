@@ -1,0 +1,76 @@
+﻿@model RnD.MassSample.ViewModels.ProductViewModels
+@{
+    ViewBag.Title = "Master Child Add";
+}
+<h2>
+    Master Child Add</h2>
+<div>
+    @Html.ValidationSummary(true)
+    <div id="masterFormZone" style="padding-bottom: 30px;">
+        <div id="categoryFormZone">
+            <div class="editor-field">
+                <strong>@Html.LabelFor(model => model.CategoryId, "Category"): </strong>
+                @Html.DropDownList("CategoryId", String.Empty)
+                @Html.ValidationMessageFor(model => model.CategoryId)
+            </div>
+        </div>
+    </div>
+    <div id="childFormZone" style="padding-bottom: 30px;">
+        <div id="productFormZone">
+            <div id="productForm" style="display: inline-block;">
+                <div style="float: left; width: 300px;">
+                    <strong>@Html.LabelFor(model => model.Name): </strong>
+                    @Html.EditorFor(model => model.Name)
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+                <div style="float: left; width: 300px;">
+                    <strong>@Html.LabelFor(model => model.Price): </strong>
+                    @Html.EditorFor(model => model.Price)
+                    @Html.ValidationMessageFor(model => model.Price)
+                </div>
+                <div style="float: left; width: 150px;">
+                    <button id="proAdd" class="button">
+                        Add
+                    </button>
+                    &nbsp;&nbsp;&nbsp;
+                    <button id="proReset" class="button">
+                        Reset
+                    </button>
+                </div>
+            </div>
+            <div id="productData" style="width: 750px;">
+                <table id="childList" class="dataTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                Product Name
+                            </th>
+                            <th>
+                                Price
+                            </th>
+                            <th>
+                                Options
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="formButton">
+        <button id="proFormSave" class="button">
+            Save
+        </button>
+        &nbsp;&nbsp;&nbsp;
+        <button id="proFormReset" class="button">
+            Reset
+        </button>
+        &nbsp;&nbsp;&nbsp;
+        <button id="proFormCancel" class="button">
+            Cancel
+        </button>
+    </div>
+</div>
+<script src="@Url.Content("~/Scripts/App/master.child-jq.js")" type="text/javascript"></script>
