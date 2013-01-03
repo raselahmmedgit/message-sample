@@ -90,7 +90,7 @@
 /* Message Box CSS   
 ----------------------------------------------------------*/
 
-.info, .success, .warning, .error
+.info, .success, .warn, .error
 {
     border: 1px solid;
     margin: 0px;
@@ -119,7 +119,7 @@
     background-position: 20px 10px, top;
 }
 
-.warning
+.warn
 {
     color: #9F6000;
     background: #FEEFB3 url('/Content/Images/App/icon-warning.png') no-repeat;

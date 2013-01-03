@@ -8,7 +8,6 @@ function DeleteRow() {
     //    var oTT = TableTools.fnGetInstance('childList'); // Get Table instance
     //    var sRow = oTT.fnGetSelected(); // Get Selected Item From Table
 
-
     //    // Set deleted row item to editable text boxes
     //    $('#Name').val($.trim(sRow[0].cells[0].innerHTML.toString()));
     //    $('#Price').val(jQuery.trim(sRow[0].cells[1].innerHTML.toString()));

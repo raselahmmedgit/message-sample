@@ -11,6 +11,10 @@ namespace RnD.MessSample.Models
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
 
+        //For Logger
+        public DbSet<Logger> Loggers { get; set; }
+        public DbSet<LoggerType> LoggerTypes { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }
@@ -82,6 +86,19 @@ namespace RnD.MessSample.Models
                         };
 
             products.ForEach(p => context.Products.Add(p));
+
+            context.SaveChanges();
+
+            // Create default loggerTypes.
+            var loggerTypes = new List<LoggerType>
+                            {
+                                new LoggerType { LoggerTypeId= 1, LoggerTypeName = "information"},
+                                new LoggerType {LoggerTypeId = 2, LoggerTypeName = "warning"},
+                                new LoggerType {LoggerTypeId = 3, LoggerTypeName = "success"},
+                                new LoggerType {LoggerTypeId = 4 , LoggerTypeName = "error"},
+                            };
+
+            loggerTypes.ForEach(c => context.LoggerTypes.Add(c));
 
             context.SaveChanges();
 

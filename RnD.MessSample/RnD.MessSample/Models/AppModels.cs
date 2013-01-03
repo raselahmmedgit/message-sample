@@ -33,4 +33,35 @@ namespace RnD.MessSample.Models
         [ForeignKey("CategoryId")]
         public virtual Category Category { get; set; }
     }
+
+    public class Logger
+    {
+        [Key]
+        public int LoggerId { get; set; }
+
+        [MaxLength(200)]
+        public string Summery { get; set; }
+
+        [MaxLength(200)]
+        public string Details { get; set; }
+
+        [MaxLength(200)]
+        public string FilePath { get; set; }
+
+        [MaxLength(200)]
+        public string Url { get; set; }
+
+        public int LoggerTypeId { get; set; }
+        [ForeignKey("LoggerTypeId")]
+        public virtual LoggerType LoggerType { get; set; }
+    }
+
+    public class LoggerType
+    {
+        [Key]
+        public int LoggerTypeId { get; set; }
+
+        [MaxLength(200)]
+        public string LoggerTypeName { get; set; }
+    }
 }

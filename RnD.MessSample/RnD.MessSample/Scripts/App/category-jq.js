@@ -73,9 +73,12 @@ function AjaxSuccess(updateTargetId, dailogId, commonMessageId, commonMessage) {
 
         //now we can close the dialog
         $(_dailogID).dialog('close');
-        //twitter type notification
-        $(_commonMessageId).html(_commonMessage);
-        $(_commonMessageId).delay(400).slideDown(400).delay(3000).slideUp(400);
+
+        ////twitter type notification
+        //$(_commonMessageId).html(_commonMessage);
+        //$(_commonMessageId).delay(400).slideDown(400).delay(3000).slideUp(400);
+
+        JQDialogAlert(_commonMessage, "success", function () { });
 
         catObjData.fnDraw();
 
