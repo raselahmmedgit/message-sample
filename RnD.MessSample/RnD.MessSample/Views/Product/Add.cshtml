@@ -1,4 +1,4 @@
-﻿@model RnD.MessSample.ViewModels.ProductViewModels
+﻿@model RnD.MessSample.ViewModels.ProductViewModel
 @{
     ViewBag.Title = "Master Child Add";
 }
@@ -10,7 +10,7 @@
         <div id="categoryFormZone">
             <div class="editor-field">
                 <strong>@Html.LabelFor(model => model.CategoryId, "Category"): </strong>
-                @Html.DropDownList("CategoryId", String.Empty)
+                @Html.DropDownList("CategoryId", Model.ddlCategories)
                 @Html.ValidationMessageFor(model => model.CategoryId)
             </div>
         </div>
@@ -38,7 +38,7 @@
                     </button>
                 </div>
             </div>
-            <div id="productData" style="width: 750px;">
+            <div id="productFormData" style="width: 750px;">
                 <table id="childList" class="dataTable">
                     <thead>
                         <tr>

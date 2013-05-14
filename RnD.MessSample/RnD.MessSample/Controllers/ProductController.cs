@@ -27,9 +27,14 @@ namespace RnD.MessSample.Controllers
 
         public ViewResult MasterChild()
         {
-            //var products = _db.Products.Include(p => p.Category);
-            //return View(products.ToList());
-            return View();
+            var categories = SelectListItemExtension.PopulateDropdownList(_db.Categories.ToList<Category>(), "CategoryId", "Name").ToList();
+
+            var productViewModel = new ProductViewModel()
+                                                     {
+                                                         ddlCategories = categories
+                                                     };
+
+            return View(productViewModel);
         }
 
         // for display datatable
